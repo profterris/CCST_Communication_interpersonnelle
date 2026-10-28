@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maîtriser la communication interpersonnelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap">
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Fiche d'exercices en thème clair : blocs = séances, cartes dépliables, corrections masquables */
+:root {
+  --bg:        #f4f6f9;
+  --surface:   #ffffff;
+  --card:      #ffffff;
+  --border:    #dfe3ea;
+  --border-hi: #b9c0ce;
+  --text:      #1d2230;
+  --text-dim:  #5c6476;
+  --accent:    #b97d00;
+  --accent-bg: #fff6df;
+  --green:     #1b8047;
+  --green-bg:  #ecf7f0;
+  --green-bd:  #c9e6d4;
+  --green-dk:  #12552f;
+  --red:       #c23b3b;
+  --blue:      #2d69ad;
+  --blue-bg:   #edf3fb;
+  --purple:    #6f45ad;
+  --font-head: 'Syne', 'Trebuchet MS', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --radius:    10px;
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── HEADER ──────────────────────────────────────────────── */
+.site-header {
+  background: linear-gradient(135deg, #ffffff 0%, #eef2f8 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 44px 20px 32px;
+  text-align: center;
+}
+.site-header .kicker {
+  display: inline-block;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 3px 12px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+}
+.site-header h1 {
+  font-family: var(--font-head);
+  font-size: clamp(24px, 6vw, 38px);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.site-header .sub {
+  color: var(--text-dim);
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+.legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 22px;
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+/* ── NAV ANCRES ──────────────────────────────────────────── */
+.nav-anchors {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.nav-anchors a {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
+}
+.nav-anchors a:hover, .nav-anchors a:focus-visible { border-color: var(--accent); color: var(--accent); }
+
+/* ── CONTENEUR PRINCIPAL ─────────────────────────────────── */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 36px 18px 80px;
+}
+
+/* ── TITRE DE BLOC ───────────────────────────────────────── */
+.bloc-titre {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 52px 0 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.bloc-titre:first-child { margin-top: 0; }
+.bloc-titre .icone { font-size: 26px; flex-shrink: 0; }
+.bloc-titre h2 {
+  font-family: var(--font-head);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.bloc-titre h2 small {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+/* ── MÉMO ────────────────────────────────────────────────── */
+.memo {
+  background: var(--green-bg);
+  border: 1px solid var(--green-bd);
+  border-left: 4px solid var(--green);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 16px 0 24px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.memo .memo-titre {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.memo code {
+  display: block;
+  background: #ffffff;
+  border: 1px solid var(--green-bd);
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: var(--green-dk);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13.5px;
+  margin: 5px 0;
+}
+.memo .note { color: var(--text-dim); font-size: 13px; margin-top: 8px; }
+
+/* ── CARTE EXERCICE ──────────────────────────────────────── */
+.exo-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: border-color .15s;
+}
+.exo-card:hover { border-color: var(--border-hi); }
+
+.exo-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+.exo-header::-webkit-details-marker { display: none; }
+.exo-header:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.exo-num {
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  min-width: 40px;
+}
+.badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+.badge-1 { background: #e9f6ee; color: var(--green); border: 1px solid #bfe2cc; }
+.badge-2 { background: var(--accent-bg); color: #8a5d00; border: 1px solid #efd798; }
+.badge-3 { background: #fbeaea; color: var(--red); border: 1px solid #efc4c4; }
+.badge-exam { background: #f2ecfa; color: var(--purple); border: 1px solid #d9c9ef; }
+
+.exo-titre-txt {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  flex: 1 1 200px;
+  min-width: 0;
+}
+.chevron { color: var(--text-dim); font-size: 13px; flex-shrink: 0; transition: transform .2s; }
+details[open] .chevron { transform: rotate(180deg); }
+
+/* ── CORPS DE L'EXERCICE ─────────────────────────────────── */
+.exo-body { padding: 0 16px 20px; border-top: 1px solid var(--border); }
+
+.contexte {
+  background: var(--blue-bg);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 6px 6px 0;
+  padding: 14px 16px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.contexte strong { color: var(--text); }
+
+.table-wrap { overflow-x: auto; margin: 12px 0; }
+.tableau-donnees {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: var(--surface);
+}
+.tableau-donnees th {
+  background: #eef1f6;
+  color: var(--text-dim);
+  font-family: var(--font-head);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.tableau-donnees td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+.tableau-donnees tr:last-child td { border-bottom: none; }
+.tableau-donnees td.num { font-weight: 700; color: var(--text); white-space: nowrap; }
+
+.questions { margin: 18px 0 0; }
+.question { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+.question .q-num {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 11px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.question p { font-size: 14px; margin: 0; min-width: 0; }
+
+/* ── COUP DE POUCE ───────────────────────────────────────── */
+.ordre-grandeur {
+  background: var(--accent-bg);
+  border: 1px solid #efd798;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #6e4b00;
+  margin: 12px 0 0;
+}
+.ordre-grandeur::before { content: "💡 "; }
+
+/* ── BOUTON CORRECTION ───────────────────────────────────── */
+.btn-corrige {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: 6px;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 9px 16px;
+  margin-top: 18px;
+  transition: all .15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-corrige:hover, .btn-corrige:focus-visible { border-color: var(--green); color: var(--green); }
+
+/* ── CORRECTION ──────────────────────────────────────────── */
+.correction {
+  display: none;
+  background: var(--green-bg);
+  border: 1px solid var(--green-bd);
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.correction.visible { display: block; }
+.correction .corr-etape {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--green-bd);
+}
+.correction .corr-etape:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.correction .c-num {
+  display: inline-block;
+  background: var(--green);
+  color: #ffffff;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 18px;
+  margin-right: 6px;
+}
+.correction code {
+  display: block;
+  background: #ffffff;
+  border: 1px solid var(--green-bd);
+  border-radius: 4px;
+  padding: 6px 12px;
+  color: var(--green-dk);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  margin: 5px 0;
+}
+.correction .res { font-family: var(--font-head); font-weight: 700; color: var(--text); }
+.correction .conclu { margin-top: 8px; font-size: 13.5px; color: #2c6244; font-style: italic; }
+.correction .tableau-corr { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; background: #ffffff; }
+.correction .tableau-corr th {
+  background: #dff0e6;
+  color: var(--green-dk);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  text-align: left;
+}
+.correction .tableau-corr td { padding: 6px 10px; border-bottom: 1px solid var(--green-bd); color: #24402f; vertical-align: top; }
+.correction .tableau-corr td.val { font-weight: 700; color: var(--green); }
+
+/* ── SÉPARATEUR ──────────────────────────────────────────── */
+hr.section-sep { border: none; border-top: 1px solid var(--border); margin: 54px 0 0; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 20px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
+  background: var(--surface);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .exo-titre-txt { font-size: 13.5px; }
+  .contexte { font-size: 13.5px; }
+  .tableau-donnees { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="kicker">🤝 Pôle 1 – BTS CCST 2e année</div>
+  <h1>Maîtriser la communication<br>interpersonnelle</h1>
+  <p class="sub">Chapitre 7. 18 exercices en 5 séances, avec l'entreprise Solvéa Énergie. Ouvre un exercice, réponds sur ton ordinateur ou à l'oral, puis vérifie avec la correction.</p>
+  <div class="legende">
+    <span class="badge badge-1">⬆ décollage</span> je découvre
+    <span class="badge badge-2">◆ intermédiaire</span> j'applique
+    <span class="badge badge-exam">★ examen</span> je m'entraîne
+  </div>
+  <nav class="nav-anchors">
+    <a href="#reperes">0 · Référentiel</a>
+    <a href="#communication">1 · Communiquer</a>
+    <a href="#relation">2 · La relation</a>
+    <a href="#strategies">3 · Enjeux et émotions</a>
+    <a href="#posture">4 · Posture pro</a>
+    <a href="#examen">5 · Sujets type E5</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══ REPÈRES : RÉFÉRENTIEL ET OBJECTIFS ═══════════════════ -->
+<div class="bloc-titre" id="reperes">
+  <span class="icone">📌</span>
+  <h2><small>Référentiel BTS CCST · épreuve E5 (ex-E4)</small>Ce que tu vas travailler</h2>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🗂 ancrage au référentiel</div>
+  <p><strong>Compétences du bloc 1 « concevoir et commercialiser des solutions technico-commerciales » :</strong></p>
+  <code>C1.1 – Préparer une négociation technique et commerciale</code>
+  <code>C1.2 – Conseiller, prescrire et communiquer tout au long du processus de négociation</code>
+  <code>C1.4 – Mettre en œuvre l'entretien de vente technico-commercial</code>
+  <p style="margin-top:10px"><strong>Savoirs associés (C1.1, « communication interpersonnelle ») :</strong></p>
+  <code>Théorie de la communication · communication écrite · communication orale · analyse de la relation interpersonnelle · formes et situations de négociation</code>
+  <code>Limites de connaissances : définition, composantes, enjeux, registre de langage, discours expert · verbale et non verbale, écoute active, empathie, techniques de reformulation · connaissance de soi et prise en compte de l'autre · relations entre les acteurs : statuts et rôles · face à face et à distance, synchrone et asynchrone</code>
+  <p style="margin-top:10px"><strong>Critères d'évaluation de l'épreuve E5 concernés :</strong></p>
+  <code>Le contexte technico-commercial et les attentes du prospect sont identifiés</code>
+  <code>Les objectifs de négociation sont définis et adaptés</code>
+  <code>Une démarche proactive de négociation est mise en œuvre</code>
+  <code>Des outils de communication et de négociation adaptés au contexte sont mobilisés</code>
+  <p class="note">Le guide d'accompagnement pédagogique précise aussi qu'une attention particulière est portée au respect des règles de communication professionnelle attendues d'un technicien supérieur.</p>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🎯 objectifs</div>
+  <code>Objectif final : en situation d'entretien technico-commercial simulé de 10 minutes, adopter une communication et une posture professionnelles adaptées à l'interlocuteur (écoute active, reformulation, assertivité, congruence verbal / non verbal) et les justifier devant un jury.</code>
+  <code>Objectif intermédiaire 1 : analyser une situation de communication (schéma, formes, canal, statuts et rôles des acteurs).</code>
+  <code>Objectif intermédiaire 2 : mobiliser les compétences relationnelles et choisir une stratégie relationnelle selon les enjeux.</code>
+  <code>Objectif intermédiaire 3 : se connaître et soigner son image professionnelle en face-à-face, au téléphone, à l'écrit et sur les médias sociaux.</code>
+  <p class="note">Source : chapitre 7 du manuel, fiches ressources 1 à 4 (pages 115 à 118).</p>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOC 1 (séance 1)
+══════════════════════════════════════════════════════════ -->
+<div class="bloc-titre" id="communication">
+  <span class="icone">📡</span>
+  <h2><small>Séance 1 · 55 min</small>Bloc 1 – Comment on communique</h2>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🗂 mémo</div>
+  <code>Communication interpersonnelle = échange d'informations, d'idées et d'émotions entre au moins deux personnes, qui s'influencent l'une l'autre.</code>
+  <code>Schéma de Wiener : émetteur → codage → message → canal → décodage → récepteur, avec une rétroaction (<em>feedback</em>) qui rend la communication circulaire.</code>
+  <code>« On ne peut pas ne pas communiquer » : un silence ou une absence de réponse est aussi un message.</code>
+  <code>Verbal = les mots · paraverbal = la voix (ton, débit, volume, rythme, intonation) · non verbal = le corps (gestes, visage, regard, tenue).</code>
+  <code>Congruence = ce que l'on dit, ce que l'on montre et ce que l'on ressent sont en accord.</code>
+  <p class="note">Fiche ressource 1. Trois situations de communication commerciale : face-à-face, téléphone, à distance par écrit (mails, SMS, réseaux sociaux…).</p>
+  <p class="note"><strong>Déroulé :</strong> 5 min projection du mémo · 10 min ex. 1 · 10 min ex. 2 en buzz collectif · 15 min ex. 3 en binômes (mime) · 15 min ex. 4 et bilan.</p>
+</div>
+
+<!-- EX 1 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 1</span>
+    <span class="badge badge-1">⬆ décollage</span>
+    <span class="exo-titre-txt">Le mail qui n'est pas passé</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Léa Martin est technico-commerciale en alternance chez <strong>Solvéa Énergie</strong>, à Lyon. L'entreprise conçoit et installe des solutions de chauffage et de pompes à chaleur pour les professionnels. Léa envoie un mail à M. Girard, directeur technique de la <strong>Laiterie des Monts</strong> : « Suite à notre échange, je vous propose une PAC air-eau HT avec COP de 4. » M. Girard ne répond pas. Une semaine plus tard, il appelle Karim Benali, responsable des ventes : « Je n'ai rien compris à ce mail. »
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Repère sur le schéma de Wiener : l'émetteur, le récepteur, le canal, le codage, le décodage.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Explique à quelle étape la communication a échoué.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Que signifie le silence de M. Girard pendant une semaine ?</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> regarde le vocabulaire utilisé par Léa. Est-il partagé par son client ?</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Émetteur : Léa · récepteur : M. Girard · canal : le mail · codage : Léa traduit son offre en sigles techniques · décodage : M. Girard ne sait pas les interpréter.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> L'échec se situe au <strong>codage / décodage</strong> : Léa et M. Girard n'ont pas le même code. Le registre de langage n'est pas adapté.<p class="conclu">Un discours expert doit rester compréhensible par l'interlocuteur.</p>
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Le silence est une forme de rétroaction : « tout communique ». Léa aurait dû relancer et vérifier la compréhension.
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 2 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 2</span>
+    <span class="badge badge-1">⬆ décollage</span>
+    <span class="exo-titre-txt">Verbal, paraverbal ou non verbal ?</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Le professeur projette les 10 éléments ci-dessous. Pour chacun, la classe vote à main levée : <strong>V</strong> (verbal), <strong>P</strong> (paraverbal) ou <strong>NV</strong> (non verbal). Un point par bonne réponse, la classe joue contre le chrono (3 minutes).<div class="table-wrap"><table class="tableau-donnees"><tr><th>N°</th><th>Élément observé chez Léa pendant le rendez-vous</th></tr><tr><td class="num">1</td><td>Elle dit « notre solution réduit votre facture de 30 % ».</td></tr><tr><td class="num">2</td><td>Elle parle très vite.</td></tr><tr><td class="num">3</td><td>Elle regarde son téléphone.</td></tr><tr><td class="num">4</td><td>Elle porte une veste et des chaussures de sécurité pour la visite d'atelier.</td></tr><tr><td class="num">5</td><td>Sa voix monte à la fin des phrases.</td></tr><tr><td class="num">6</td><td>Elle emploie le mot « franchement » à chaque phrase.</td></tr><tr><td class="num">7</td><td>Elle hoche la tête quand le client parle.</td></tr><tr><td class="num">8</td><td>Elle insiste sur le mot « garantie ».</td></tr><tr><td class="num">9</td><td>Elle sourit en saluant le client.</td></tr><tr><td class="num">10</td><td>Elle parle trop doucement pour être entendue dans l'atelier.</td></tr></table></div>
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Classe les 10 éléments.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Lequel des trois a le plus d'impact immédiat sur le client ? Pourquoi ?</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> le paraverbal concerne la voix, pas les mots ni le corps.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> <div class="table-wrap"><table class="tableau-corr"><tr><th>V</th><th>P</th><th>NV</th></tr><tr><td>1 · 6</td><td>2 · 5 · 8 · 10</td><td>3 · 4 · 7 · 9</td></tr></table></div>
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Le <span class="res">non verbal</span> : son impact est immédiat et il ne peut pas être annulé par les mots (fiche ressource 1).
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 3 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 3</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Le mime incongruent</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      En binômes. L'un prononce une phrase commerciale en gardant un non verbal ou un paraverbal qui la contredit. L'autre doit trouver l'émotion réelle. On inverse les rôles. Exemple projeté : Léa dit « Je suis ravie de vous rencontrer » bras croisés, sans sourire, en regardant sa montre.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Explique pourquoi le message de Léa n'est pas congruent.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Quel message le client retient-il : les mots ou l'attitude ?</p></div>
+      <div class="question"><span class="q-num">3</span><p>Réécris la scène pour qu'elle soit congruente (mots, voix, corps).</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> congruence = les mots, la voix et le corps disent la même chose.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Les mots expriment la joie, le corps exprime la fermeture et l'impatience : il y a un désaccord entre le dit et le montré.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Le client retient l'<strong>attitude</strong>, car l'information non verbale l'emporte sur l'information verbale.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Exemple : bras ouverts, poignée de main franche, sourire, regard dans les yeux, voix posée : « Bonjour monsieur Girard, je suis ravie de vous rencontrer. »<p class="conclu">Pour l'oral de l'E5, le jury observe aussi ta posture, pas seulement ton discours.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 4 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 4</span>
+    <span class="badge badge-exam">★ examen</span>
+    <span class="exo-titre-txt">Quel canal pour quel moment de l'affaire ?</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      L'affaire Laiterie des Monts avance. Léa doit gérer quatre moments : <strong>a.</strong> obtenir un premier rendez-vous avec M. Girard ; <strong>b.</strong> présenter la solution technique avec visite de la chaufferie ; <strong>c.</strong> envoyer le devis détaillé ; <strong>d.</strong> prévenir d'un retard de livraison de 48 h.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Pour chaque moment, choisis la situation de communication : face-à-face, téléphone ou écrit.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Précise si l'échange est synchrone ou asynchrone.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Justifie un de tes choix en une phrase, comme devant un jury.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> synchrone = en même temps (on se répond tout de suite) · asynchrone = en différé.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> <div class="table-wrap"><table class="tableau-corr"><tr><th>Moment</th><th>Situation</th><th>Type</th></tr><tr><td>a</td><td>téléphone</td><td>synchrone</td></tr><tr><td>b</td><td>face-à-face</td><td>synchrone</td></tr><tr><td>c</td><td>écrit (mail + PDF)</td><td>asynchrone</td></tr><tr><td>d</td><td>téléphone, confirmé par écrit</td><td>synchrone puis asynchrone</td></tr></table></div>
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Voir tableau. D'autres choix sont acceptables s'ils sont justifiés.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Exemple : « J'ai choisi le face-à-face pour la présentation, car le client doit voir la chaufferie et je dois observer ses réactions non verbales. »
+      </div>
+    </div>
+  </div>
+</details>
+
+<hr class="section-sep">
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOC 2 (séance 2)
+══════════════════════════════════════════════════════════ -->
+<div class="bloc-titre" id="relation" style="margin-top:40px">
+  <span class="icone">🧭</span>
+  <h2><small>Séance 2 · 55 min</small>Bloc 2 – Bien se placer dans la relation</h2>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🗂 mémo</div>
+  <code>Statut = la position d'une personne dans l'organisation (directeur technique, acheteur…) · rôle = ce que l'on attend d'elle dans ce statut.</code>
+  <code>Rapport de place = position de chacun par rapport à l'autre : supérieure, inférieure ou équilibrée. Il doit être satisfaisant pour tous.</code>
+  <code>Stéréotype = idée toute faite sur un groupe · préjugé = jugement avant de connaître, souvent en réaction à une menace.</code>
+  <code>Compétences relationnelles : empathie (comprendre les émotions de l'autre) · écoute active (écouter sans juger, questionner, reformuler) · reformulation (vérifier le sens, éviter les malentendus) · assertivité (s'exprimer en respectant l'autre et en se faisant respecter).</code>
+  <p class="note">Fiche ressource 2, parties I à III.</p>
+  <p class="note"><strong>Déroulé :</strong> 5 min mémo · 10 min ex. 5 · 10 min ex. 6 en quiz collectif · 15 min ex. 7 en relais chronométré · 15 min ex. 8 en jeu de rôle.</p>
+</div>
+
+<!-- EX 5 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 5</span>
+    <span class="badge badge-1">⬆ décollage</span>
+    <span class="exo-titre-txt">Qui est qui autour de la table ?</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Le rendez-vous de présentation réunit, à la Laiterie des Monts : <strong>M. Girard</strong>, directeur technique ; <strong>Mme Roche</strong>, acheteuse ; <strong>Paul Lemoine</strong>, technicien de maintenance qui utilisera l'installation. Côté Solvéa Énergie : <strong>Léa</strong> et <strong>Karim Benali</strong>, son responsable.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Pour chaque personne de la Laiterie, indique son statut et son rôle dans l'achat.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Quel rapport de place Léa doit-elle chercher avec Paul ? avec M. Girard ?</p></div>
+      <div class="question"><span class="q-num">3</span><p>Que se passe-t-il si Léa ne s'adresse qu'à Karim pendant le rendez-vous ?</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> un même individu peut avoir plusieurs statuts. Le rôle, c'est ce qu'on attend de lui ici.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> <div class="table-wrap"><table class="tableau-corr"><tr><th>Personne</th><th>Statut</th><th>Rôle dans l'achat</th></tr><tr><td>M. Girard</td><td>directeur technique</td><td>prescripteur, valide la solution technique</td></tr><tr><td>Mme Roche</td><td>acheteuse</td><td>négocie le prix et les conditions</td></tr><tr><td>Paul Lemoine</td><td>technicien de maintenance</td><td>utilisateur, juge la facilité d'entretien</td></tr></table></div>
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Avec Paul : un rapport équilibré, d'égal à égal sur la technique. Avec M. Girard : un rapport équilibré aussi, Léa est l'experte de la solution, il est l'expert de son usine.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Les clients se sentent mis à l'écart : le rapport de place n'est plus satisfaisant et la relation se dégrade.
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 6 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 6</span>
+    <span class="badge badge-1">⬆ décollage</span>
+    <span class="exo-titre-txt">Stéréotype, préjugé ou fait ?</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Quiz projeté. Pour chaque phrase entendue chez Solvéa Énergie, la classe répond : stéréotype, préjugé ou fait. <br><strong>a.</strong> « Les acheteurs ne pensent qu'au prix. » <br><strong>b.</strong> « Ce client vient d'un grand groupe, il va forcément nous écraser. » <br><strong>c.</strong> « Mme Roche a demandé trois devis concurrents. » <br><strong>d.</strong> « Les techniciens ne comprennent rien au commercial. »
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Classe les 4 phrases.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Explique le risque d'un stéréotype pour la négociation.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> un fait est vérifiable. Un stéréotype généralise sur un groupe.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> a et d : stéréotypes (généralisation sur un groupe) · b : préjugé (jugement avant de connaître, réaction de défense) · c : fait (vérifiable).
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Le stéréotype filtre l'écoute : le vendeur n'entend plus les vrais besoins du client et prépare mal sa négociation.<p class="conclu">Avant l'oral, vérifie que ta fiche descriptive décrit des faits sur ton client, pas des a priori.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 7 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 7</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Relais de reformulation</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Deux équipes, en relais. Le professeur projette une phrase de client. Le premier qui lève la main reformule à l'oral en commençant par « Si je comprends bien… ». L'équipe adverse valide ou corrige. Phrases : <br><strong>a.</strong> « Votre machine fait trop de bruit pour mes salariés. » <br><strong>b.</strong> « On a déjà été déçus par un installateur l'an dernier. » <br><strong>c.</strong> « Il faut que ce soit posé avant l'hiver, sinon ça ne sert à rien. »
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Reformule les trois phrases.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Pour la phrase b, ajoute une question qui montre ton empathie.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> reformuler, ce n'est pas répéter : tu redis l'idée avec tes mots et tu vérifies.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> a. « Si je comprends bien, le niveau sonore est un critère important pour le confort de vos équipes ? » · b. « Si je comprends bien, vous voulez être sûr de pouvoir faire confiance à votre prochain installateur ? » · c. « Si je comprends bien, le délai d'installation avant l'hiver est impératif pour vous ? »
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Exemple : « Qu'est-ce qui vous a déçu, précisément ? » Elle montre que Léa accueille l'émotion du client avant de répondre.
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 8 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 8</span>
+    <span class="badge badge-exam">★ examen</span>
+    <span class="exo-titre-txt">Passif, agressif ou assertif ?</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Mme Roche, l'acheteuse, coupe Léa : « Votre prix est 15 % plus cher que le concurrent. C'est non. » Trois réponses possibles de Léa : <br><strong>A.</strong> « Ah… d'accord, je vais voir ce que je peux faire sur le prix. » <br><strong>B.</strong> « Le concurrent pose du matériel bas de gamme, ce n'est pas comparable. » <br><strong>C.</strong> « Je comprends que l'écart vous interpelle. Pouvons-nous comparer ensemble ce que comprennent les deux offres ? »
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Associe chaque réponse à une attitude : passive, agressive, assertive.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Jeu de rôle (3 min, en binômes) : un étudiant joue Mme Roche, l'autre répond de façon assertive. Les autres observent et notent une force et un conseil.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> assertif = je me respecte ET je respecte l'autre.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> A : passive (Léa cède sans argumenter) · B : agressive (elle attaque le concurrent et contredit la cliente) · C : <span class="res">assertive</span> (elle accueille l'objection et garde sa position).
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Points d'observation : reformulation de l'objection, ton calme, pas de dénigrement du concurrent, question ouverte pour relancer.<p class="conclu">C'est le type d'objection que le jury peut introduire lors du changement de paramètres de la situation 2.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<hr class="section-sep">
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOC 3 (séance 3)
+══════════════════════════════════════════════════════════ -->
+<div class="bloc-titre" id="strategies" style="margin-top:40px">
+  <span class="icone">⚖️</span>
+  <h2><small>Séance 3 · 55 min</small>Bloc 3 – Enjeux, stratégies et émotions</h2>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🗂 mémo</div>
+  <code>Enjeux = ce que l'on peut gagner ou perdre dans l'échange : opératoire (soi face à l'autre, ex. : réaliser une vente) · symbolique (soi face à soi, ex. : importance du rendez-vous pour son objectif) · identitaire (soi face aux autres, ex. : ne pas perdre la face).</code>
+  <code>Stratégies relationnelles : intégrative (gagnant-gagnant, à privilégier) · de compromis (marchandage, peut évoluer vers l'intégrative) · distributive (gagnant-perdant, climat de méfiance).</code>
+  <code>Intelligence émotionnelle = capacité à analyser l'origine de ses émotions et à les réguler.</code>
+  <code>Confiance en soi = s'accepter avec ses atouts et ses limites pour gérer le stress. Elle va avec la maîtrise de soi.</code>
+  <p class="note">Fiche ressource 2, parties IV et V, et fiche ressource 3, partie I.</p>
+  <p class="note"><strong>Déroulé :</strong> 5 min mémo · 10 min ex. 9 · 10 min ex. 10 · 15 min ex. 11 en jeu de rôle avec observateurs · 15 min ex. 12 en préparation individuelle puis 2 passages.</p>
+</div>
+
+<!-- EX 9 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 9</span>
+    <span class="badge badge-1">⬆ décollage</span>
+    <span class="exo-titre-txt">Ce qui se joue pour chacun</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Avant le rendez-vous, Léa confie : « Si je signe la Laiterie des Monts, j'atteins mon objectif trimestriel. Et je ne veux surtout pas avoir l'air d'une débutante devant Karim et le client. » De son côté, M. Girard a promis à sa direction de réduire la facture énergétique de l'usine.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Retrouve dans le texte un enjeu opératoire, un enjeu symbolique et un enjeu identitaire pour Léa.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Quel est l'enjeu principal de M. Girard ?</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> identitaire = l'image que je donne aux autres.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Opératoire : signer la vente · symbolique : atteindre son objectif trimestriel · identitaire : ne pas passer pour une débutante, ne pas perdre la face.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> M. Girard a un enjeu identitaire et opératoire : tenir sa promesse devant sa direction en réduisant la facture.<p class="conclu">Identifier les enjeux du client, c'est identifier ses attentes : c'est un critère de l'E5.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 10 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 10</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Quelle stratégie pour quel client ?</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Trois situations chez Solvéa Énergie : <br><strong>a.</strong> Un client fidèle depuis 8 ans veut équiper un nouveau site. <br><strong>b.</strong> Un prospect fait jouer trois concurrents et exige une remise, contre un contrat de maintenance. <br><strong>c.</strong> Un client ne paie plus ses factures et menace de partir.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Associe chaque situation à la stratégie qui se présente : intégrative, de compromis ou distributive.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Pour la situation b, propose une action pour faire évoluer la stratégie vers l'intégrative.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> regarde la durée de la relation et le climat de confiance.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> a : intégrative (relation durable, gagnant-gagnant) · b : compromis (marchandage remise contre maintenance) · c : distributive (conflit, méfiance).
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Questionner le prospect sur ses vrais besoins (coût global, continuité de production) et proposer une solution qui y répond précisément : on passe du marchandage à la recherche d'intérêt commun.
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 11 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 11</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Le client en colère</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Jeu de rôle (3 minutes, deux passages). Paul Lemoine appelle Léa, furieux : « Votre technicien est venu ce matin, il est reparti sans finir. Ma ligne de production est à l'arrêt ! » Un étudiant joue Paul, un autre Léa. Les observateurs notent sur leur ordinateur : calme, voix, questions, reformulation.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Joue la scène en gardant ton calme.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Observateurs : relevez une phrase qui a fait baisser la tension.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Explique comment Léa utilise son intelligence émotionnelle.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> la fiche 3 donne la méthode : rester calme, baisser la voix, questionner pour comprendre.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Réponse attendue : écouter sans couper, baisser la voix, poser des questions (« Depuis quelle heure la ligne est-elle arrêtée ? »), reformuler, proposer une action datée.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Exemple : « Je comprends, une ligne à l'arrêt, c'est une perte pour vous. Je vérifie tout de suite et je vous rappelle dans 15 minutes. »
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Léa identifie l'origine de son émotion (stress, envie de se justifier), la régule et s'adapte à l'émotion de Paul.
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 12 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 12</span>
+    <span class="badge badge-exam">★ examen</span>
+    <span class="exo-titre-txt">Préparer la stratégie relationnelle de ton entretien</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Reprends la situation de négociation de ta fiche descriptive E5 (ton entreprise d'apprentissage).
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Liste les interlocuteurs avec leur statut et leur rôle.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Identifie un enjeu opératoire, symbolique et identitaire pour toi et pour ton client.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Choisis ta stratégie relationnelle et justifie-la en 3 phrases, à l'oral, devant la classe (1 minute).</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> c'est la partie « stratégie de négociation » de ta fiche descriptive.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Le tableau doit reprendre les acteurs réels de ta situation (décideur, prescripteur, utilisateur, acheteur).
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Les enjeux doivent être concrets et liés à l'affaire (montant, délai, image).
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> En BtoB, la stratégie intégrative est en général la plus pertinente pour une relation durable. Si tu en choisis une autre, justifie-la par le contexte.<p class="conclu">Ces éléments nourrissent ta présentation de la situation 1 et l'entretien avec la commission.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<hr class="section-sep">
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOC 4 (séance 4)
+══════════════════════════════════════════════════════════ -->
+<div class="bloc-titre" id="posture" style="margin-top:40px">
+  <span class="icone">👔</span>
+  <h2><small>Séance 4 · 55 min</small>Bloc 4 – Se connaître et soigner son image pro</h2>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🗂 mémo</div>
+  <code>Marketing de soi = utiliser pour soi les techniques du marketing pour se valoriser. Il commence par un autodiagnostic sincère : clarifier le présent, se projeter dans le futur.</code>
+  <code>Face-à-face : rituels de politesse, questionnement, écoute, reformulation. Marque personnelle = connaissances, compétences et réseau que l'on montre.</code>
+  <code>Téléphone : préparation matérielle (lieu calme, script, fiche contact) et psychologique (le sourire s'entend). Voix, articulation, débit soignés.</code>
+  <code>Écrit : style clair, concis, adapté à la cible ; orthographe irréprochable.</code>
+  <code>Médias sociaux : <em>personal branding</em> (avantage compétitif, image fidèle, présence active) et e-réputation (profils nettoyés, photo professionnelle, ton positif).</code>
+  <p class="note">Fiche ressource 3, partie II, et fiche ressource 4.</p>
+  <p class="note"><strong>Déroulé :</strong> 5 min mémo · 10 min ex. 13 · 15 min ex. 14 en appels dos à dos · 10 min ex. 15 · 15 min ex. 16.</p>
+</div>
+
+<!-- EX 13 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 13</span>
+    <span class="badge badge-1">⬆ décollage</span>
+    <span class="exo-titre-txt">Mon autodiagnostic de communicant</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Avant l'oral, Karim demande à Léa de faire le point sur elle-même. Fais le même exercice, sur ton ordinateur, en 8 minutes.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Clarifier le présent : cite 2 forces et 1 frein dans ta façon de communiquer avec les clients.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Se projeter : quel objectif professionnel vises-tu après le BTS ?</p></div>
+      <div class="question"><span class="q-num">3</span><p>Quelle valeur ajoutée apportes-tu à ton interlocuteur ? Écris-la en une phrase.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> pense à un vrai moment vécu en entreprise : un appel, un rendez-vous, une réclamation.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Exemple : forces : « j'écoute bien », « je connais les produits » · frein : « je parle vite quand je suis stressé ».
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Réponse personnelle, cohérente avec ton parcours d'apprentissage.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Exemple : « J'aide mes clients à choisir la solution la plus économique sur la durée grâce à ma connaissance technique des installations. »<p class="conclu">Cette phrase peut ouvrir ta présentation devant le jury.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 14 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 14</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Appels dos à dos</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      En binômes, chaises dos à dos : on n'entend que la voix. Léa appelle M. Girard pour obtenir un rendez-vous. Il est pressé. Durée : 2 minutes, puis on inverse. Le reste du groupe note sur ordinateur : voix, débit, articulation, sourire audible, objectif atteint.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Joue l'appel en obtenant une date de rendez-vous.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Cite deux éléments de préparation que Léa doit avoir avant d'appeler.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Observateurs : donnez une note de 1 à 4 sur la voix et justifiez-la.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> sans le visage, tout passe par le paraverbal.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Structure attendue : présentation, accroche liée au besoin (facture énergétique), proposition de deux créneaux, reformulation, confirmation.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Préparation matérielle : lieu calme, fiche contact, script, bloc-notes · préparation psychologique : être disponible, souriant.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> La note s'appuie sur des faits observés (« tu as ralenti pour donner la date »), pas sur un jugement de la personne.
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 15 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 15</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Le mail de relance à réécrire</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Mail projeté, écrit par Léa :<br><em>« Bonjour, je me permet de revenir vers vous car j'ai envoyer le devis il y a 10 jours et j'ai pas de nouvelle, pouvez-vous me dire svp si c'est ok ou pas  ??? Cdt Léa »</em>
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Relève 4 erreurs (orthographe, ton, politesse, forme).</p></div>
+      <div class="question"><span class="q-num">2</span><p>Réécris le mail en 5 lignes maximum, sur ton ordinateur.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> un mail professionnel = un objet, une formule d'appel, un message clair, une proposition, une signature complète.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> « je me permet » → je me permets · « j'ai envoyer » → j'ai envoyé · « j'ai pas » → je n'ai pas · « svp », «  ??? », « Cdt » : abréviations et ponctuation non professionnelles · pas d'objet ni de signature complète.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Exemple : <em>Objet : votre projet de chauffage – devis du 4 novembre</em><br>Bonjour monsieur Girard,<br>Je reviens vers vous au sujet du devis transmis le 4 novembre. Avez-vous pu l'étudier ? Je vous propose un échange téléphonique de 15 minutes cette semaine pour répondre à vos questions.<br>Bien cordialement,<br>Léa Martin – technico-commerciale, Solvéa Énergie – 04 00 00 00 00
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 16 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 16</span>
+    <span class="badge badge-2">◆ intermédiaire</span>
+    <span class="exo-titre-txt">Audit de profil professionnel</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Le professeur projette le profil fictif de « Tom D. » sur un réseau social professionnel : photo de soirée, titre « en recherche », aucune expérience détaillée, dernière publication : une blague sur un client. Tom veut devenir technico-commercial.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Relève 3 éléments qui nuisent à son e-réputation.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Propose un titre de profil et une phrase de résumé qui travaillent son <em>personal branding</em>.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Vérifie ton propre profil en 3 minutes : note une amélioration à faire.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> un recruteur ou un client regarde d'abord la photo, le titre et les dernières publications.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Photo non professionnelle · titre vague · publication irrespectueuse envers un client · profil incomplet.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Exemple de titre : « Technico-commercial en alternance – solutions de chauffage pour les professionnels ». Résumé : « Je conseille les entreprises sur des solutions énergétiques adaptées à leurs contraintes techniques et budgétaires. »
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Réponse personnelle.<p class="conclu">Image fidèle, professionnelle et active : ce sont les trois axes du <em>personal branding</em>.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<hr class="section-sep">
+
+<!-- ══════════════════════════════════════════════════════════
+     BLOC 5 (séance 5)
+══════════════════════════════════════════════════════════ -->
+<div class="bloc-titre" id="examen" style="margin-top:40px">
+  <span class="icone">🎓</span>
+  <h2><small>Séance 5 · 55 min</small>Bloc 5 – Sujets type examen E5</h2>
+</div>
+
+<div class="memo">
+  <div class="memo-titre">🗂 mémo</div>
+  <code>Situation 1 de l'E5 : présentation orale de la préparation de l'entretien (20 min maximum) puis entretien avec la commission (10 min maximum).</code>
+  <code>Situation 2 de l'E5 : négociation simulée à partir de la situation modifiée par la commission (15 à 20 min), puis entretien (10 min maximum) sur la valeur ajoutée apportée et les actions de suivi.</code>
+  <code>Le jury observe aussi le respect des règles de communication professionnelle.</code>
+  <p class="note">Guide d'accompagnement pédagogique du BTS CCST et outil d'aide à l'évaluation (degrés de maîtrise : non maîtrisé, maîtrise partielle, bonne maîtrise, excellente maîtrise).</p>
+  <p class="note"><strong>Déroulé :</strong> 5 min mémo · 20 min ex. 17 (enregistrements webcam et visionnage) · 30 min ex. 18 (simulation, entretien, débriefing collectif).</p>
+</div>
+
+<!-- EX 17 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 17</span>
+    <span class="badge badge-exam">★ examen</span>
+    <span class="exo-titre-txt">Mon pitch d'ouverture filmé</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      Tu entres dans la salle d'examen. Tu as 2 minutes pour te présenter et présenter ton entreprise et ta situation de négociation. Enregistre-toi avec la webcam de l'ordinateur, puis visionne ta vidéo avec un camarade.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Réalise ton pitch de 2 minutes.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Analyse ta vidéo : verbal (vocabulaire, clarté), paraverbal (débit, volume), non verbal (regard, gestes, tenue).</p></div>
+      <div class="question"><span class="q-num">3</span><p>Note une force et un point de progrès, avec tact.</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> regarde la vidéo une fois sans le son : ton non verbal est-il congruent avec ce que tu dis ?</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Structure attendue : salutation, présentation de soi (statut d'alternant, rôle), entreprise, client, objectif de l'entretien.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Points de vigilance fréquents : regard fuyant vers l'écran, débit trop rapide, mains qui s'agitent, vocabulaire familier, sigles non expliqués.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> Le retour doit porter sur des faits observés et proposer une action concrète (« ralentis sur les chiffres »).<p class="conclu">C'est l'activité recommandée par le guide d'accompagnement pour le pôle 1.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+<!-- EX 18 -->
+<details class="exo-card">
+  <summary class="exo-header">
+    <span class="exo-num">Ex. 18</span>
+    <span class="badge badge-exam">★ examen</span>
+    <span class="exo-titre-txt">Sujet complet : simulation avec changement de paramètre</span>
+    <span class="chevron">▼</span>
+  </summary>
+  <div class="exo-body">
+    <div class="contexte">
+      <strong>Situation initiale :</strong> Léa a présenté à M. Girard une pompe à chaleur pour la Laiterie des Monts. Il était convaincu. <br><strong>Changement de paramètre (commission) :</strong> M. Girard a quitté l'entreprise. Léa est reçue par Mme Roche, l'acheteuse, qui ne connaît pas le dossier, compare trois devis et ouvre l'entretien de façon froide. <br><strong>Organisation :</strong> 1 « Léa », 1 « Mme Roche », 3 membres de commission, 4 observateurs. Simulation 10 minutes, puis entretien avec la commission 5 minutes. On fait deux passages.
+    </div>
+    <div class="questions">
+      <div class="question"><span class="q-num">1</span><p>Mène l'entretien : prise de contact, découverte, reformulation, traitement de l'objection prix.</p></div>
+      <div class="question"><span class="q-num">2</span><p>Commission : interroge Léa sur sa stratégie relationnelle et sur les enjeux de Mme Roche.</p></div>
+      <div class="question"><span class="q-num">3</span><p>Observateurs : positionnez Léa sur chaque critère avec les quatre degrés de maîtrise (non maîtrisé à excellente maîtrise).</p></div>
+    </div>
+    <div class="ordre-grandeur"><strong>Coup de pouce :</strong> le rapport de place change : Mme Roche ne connaît pas Léa. Il faut reconstruire la confiance avant d'argumenter.</div>
+    <button class="btn-corrige" onclick="toggleCorr(this)">✅ Voir la correction</button>
+    <div class="correction">
+      <div class="corr-etape">
+        <span class="c-num">1</span> Prise de contact : rituels de politesse, présentation, rappel de l'historique sans supposer qu'elle le connaît · découverte : questions sur ses critères (prix, coût global, délai) · reformulation des attentes · objection prix traitée de façon assertive (comparaison des offres, coût global, sans dénigrer le concurrent).
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">2</span> Réponses attendues : statut et rôle de Mme Roche (acheteuse : prix et conditions) · enjeu identitaire (montrer sa maîtrise du dossier à sa direction) · stratégie : partir d'un climat de compromis pour aller vers l'intégrative.
+      </div>
+      <div class="corr-etape">
+        <span class="c-num">3</span> <div class="table-wrap"><table class="tableau-corr"><tr><th>Critère E5</th><th>Ce qu'on observe</th></tr><tr><td>Contexte et attentes identifiés</td><td>Léa questionne et reformule les attentes de Mme Roche</td></tr><tr><td>Objectifs définis et adaptés</td><td>Léa adapte son objectif au nouvel interlocuteur</td></tr><tr><td>Démarche proactive</td><td>Léa propose, relance, conclut sur une action</td></tr><tr><td>Outils de communication adaptés</td><td>écoute active, reformulation, assertivité, posture congruente</td></tr></table></div><p class="conclu">Dans l'entretien, Léa doit expliquer la valeur ajoutée qu'elle a apportée et les actions de suivi prévues.</p>
+      </div>
+    </div>
+  </div>
+</details>
+
+</main>
+
+<footer class="site-footer">
+  BTS CCST – Pôle 1 &nbsp;|&nbsp ; Chapitre 7 : maîtriser la communication interpersonnelle &nbsp;|&nbsp ; 18 exercices progressifs
+</footer>
+
+<script>
+function toggleCorr(btn) {
+  const corr = btn.nextElementSibling;
+  const isVisible = corr.classList.contains('visible');
+  corr.classList.toggle('visible', !isVisible);
+  btn.textContent = isVisible ? '✅ Voir la correction' : '🔒 Masquer la correction';
+}
+</script>
+</body>
+</html>
